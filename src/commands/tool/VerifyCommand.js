@@ -11,5 +11,7 @@ module.exports = class VerifyCommand extends BaseCommand {
     const role = message.guild.roles.cache.get('733346115948380201')
 
     await message.member.roles.add(role.id).catch(err => console.log(err));
+
+    message.delete();
   }
 }

@@ -13,11 +13,9 @@ module.exports = class ComandosCommand extends BaseCommand {
     //      .addField('')//
     const commmandEmbed = new Discord.MessageEmbed()
       .setTitle(`Comandos`)
-      .addField('')
       .addField(`Diversion`)
       .addField('Say: Basicamente sirve para que el bot diga cualquier cosa `e!say [lo que quieras]`')
       .addField('Horarios: [PrOxImAmEnTe]')
-      .addField('')
       .addField('Moderacion')
       .addField('Ban: Para banear miembros `e!ban @usuario {razon}`')
       .addField('Kick: Para expulsar a miembros `e!kick @usuario {razon}`')

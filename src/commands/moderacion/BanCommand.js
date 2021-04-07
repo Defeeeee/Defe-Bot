@@ -7,7 +7,7 @@ module.exports = class BanCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("No tenes permiso master")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No tenes permiso master")
     if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("No tengo los permisos necesarios");
     let reason = args.slice(1).join(" ");
     const mentionedMember = message.mentions.members.first();

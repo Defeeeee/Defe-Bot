@@ -1,5 +1,6 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const Discord = require('discord.js');
+const ms = require('ms');
 
 module.exports = class TempmodCommand extends BaseCommand {
   constructor() {

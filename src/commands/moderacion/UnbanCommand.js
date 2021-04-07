@@ -7,25 +7,25 @@ module.exports = class UnbanCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
-   if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You dont have permision to unban members ._. ")
-   if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send ("I dont have permissions to unban members")
+   if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("No tenes permiso para desbanear gente ")
+   if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send ("No tengo permiso para desbanear gente")
 
    let reason = args.slice(1).join(" ")
    let userID = args[0];
 
-  if (!reason) reason = ('No reason given');
-  if (!args[0]) return message.channel.send("You must state someone to unban. (remember, o!ban ID reason)")
-  if (isNaN(args[0])) return message.channel.send("The ID is not a number. (remember, o!ban ID reason)")
+  if (!reason) reason = ('No hay razon');
+  if (!args[0]) return message.channel.send("Tenes que poner a un usuario para desbanear `e!unban ID razon`")
+  if (isNaN(args[0])) return message.channel.send("El ID no es un numero `e!unban ID razon`")
 
   message.guild.fetchBans().then(async bans => {
-    if (bans.size == 0) return message.channel.send(' This server does not have anyone banned ._.');
+    if (bans.size == 0) return message.channel.send('No hay nadie baneado en el server');
     let bUser = bans.find(b => b.user.id == userID);
-    if (!bUser) return message.channel.send('That ID is not banned');
+    if (!bUser) return message.channel.send('Ese ID no esta baneado');
     await message.guild.members.unban(bUser.user, reason).catch(err => {
       console.log(err);
-      return message.channel.send('Something went wrong trying to unban the ID stated');
+      return message.channel.send('Algo salio mal intentando desbanear a ese usuario');
     }).then(() => {
-      message.channel.send(`Succesfully unbanned  ${args[0]}`);
+      message.channel.send(`Se ha desbaneado a ${args[0]} correctamente`);
     })
   })
   }

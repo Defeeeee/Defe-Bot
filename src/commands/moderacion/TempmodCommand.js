@@ -21,9 +21,9 @@ module.exports = class TempmodCommand extends BaseCommand {
       .addField(`Duracion: ${time}`)
       .setColor(`RANDOM`)
       .setFooter('Defe Bot desarrollado por Federico Diaz Nemeth');
-    const tempmodEmbed3 = new Discord.MessageEmbed
+    const tempmodEmbed3 = new Discord.MessageEmbed()
       .setTitle(`Tu moderador temporal en ${message.guild.name} ha finalizado.`)
-      .setColor(RANDOM)
+      .setColor(`RANDOM`)
       .setTimestamp()
       .setFooter('Defe Bot desarrollado por Federico Diaz Nemeth');
 
@@ -39,6 +39,7 @@ module.exports = class TempmodCommand extends BaseCommand {
 
     setTimeout(async function () {
       await mentionedMember.roles.remove(staffRole.id).catch(err => console.log(err));
+      await mentionedMember.setNickname(mentionedMember.user.username)
       await mentionedMember.send(tempmodEmbed3).catch(err => console.log(err));
     }, ms(time));
   }

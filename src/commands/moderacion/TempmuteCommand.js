@@ -38,11 +38,11 @@ module.exports = class TempmuteCommand extends BaseCommand {
 
     await mentionedMember.roles.add(muteRole).catch(err => console.log(err));
       await mentionedMember.roles.remove(memberRole).catch(err => console.log(err));
-      await mentionedMember.send(tempmuteEmbed).catch(err => console.log(err)); message.channel.send(`${mentionedMember.user.username} + muteado`)
+      await mentionedMember.send(tempmuteEmbed).catch(err => console.log(err)); message.channel.send(`${mentionedMember} Fue muteado`)
     
     setTimeout(async function () {
       await mentionedMember.roles.remove(muteRole).catch(err => console.log(err));
-      await mentionedMember.roles.add(memberRole).catch(err => console.log(err)); message.channel.send(`${mentionedMember.user.username} + desmuteado`)
+      await mentionedMember.roles.add(memberRole).catch(err => console.log(err)); message.channel.send(`${mentionedMember} Fue desmuteado`)
       await mentionedMember.send(tempmutefinishedEmbed).catch(err => console.log(err));
     }, ms(time));
   }

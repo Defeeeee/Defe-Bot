@@ -21,7 +21,7 @@ module.exports = class ComandosCommand extends BaseCommand {
       .addField('Kick: Para expulsar a miembros `e!kick @usuario {razon}`', '\u200b')
       .addField('Nickname: Para cambiar el nick de un miembro `e!nickname @usuario {razon}`', '\u200b')
       .addField('Nuke: borra todos los mensajes del canal donde se escriba, borra el canal y crea uno con los mismos permisos, `e!nuke {razon}` este comando esta puesto para que solo los roles que tengan el permiso "ADMINISTRADOR" lo puedan usar', '\u200b')
-      .addField('Purge: Borra los mensajes indicados en el comando dentro de el mismo canal en el rango de 2 a 100 mensajes, `!purge numero`', '\u200b')
+      .addField('Purge: Borra los mensajes indicados en el comando dentro de el mismo canal en el rango de 2 a 100 mensajes, `e!purge numero`', '\u200b')
       .addField('Recruit: para sumar nuevos mods, `e!recruit @user`', '\u200b')
       .addField('Tempmod: Para sumar mods temporales, `e!tempmod @user tiempo`', '\u200b')
       .addField('Tempmute: Para mutear temporalmente, `e!tempmute @user tiempo`', '\u200b')

@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = class SayCommand extends BaseCommand {
   constructor() {
-    super('say', 'dun', []);
+    super('say', 'fun', []);
   }
 
   async run(client, message, args) {

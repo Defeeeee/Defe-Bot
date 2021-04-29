@@ -12,15 +12,17 @@ module.exports = class SUSCommand extends BaseCommand {
     const SUSRole = message.guild.roles.cache.get('837139025646714883');
     const modrole = message.guild.roles.cache.get('733344436611973220');
     const masterrole = message.guild.roles.cache.get('733344476034236516');
+    const pepolrole = message.guild.roles.cache.get('733346115948380201');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const SUSEmbed = new discord.MessageEmbed()
-      .setTitle(`${mentionedMember} IS KINDA SUS`)
+      .setTitle(`${mentionedMember.user.username} IS KINDA SUS`)
       .setDescription('sus')
       .setColor('RANDOM');
 
     await mentionedMember.roles.add(SUSRole).catch(err => console.log(err));
       await mentionedMember.roles.remove(modrole).catch(err => console.log(err));
       await mentionedMember.roles.remove(masterrole).catch(err => console.log(err));
+      await mentionedMember.roles.remove(pepolrole).catch(err => console.log(err));
     
     message.channel.send(SUSEmbed);
   }

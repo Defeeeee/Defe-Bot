@@ -15,10 +15,10 @@ module.exports = class UnsusCommand extends BaseCommand {
     const pepolrole = message.guild.roles.cache.get('733346115948380201');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const unsusNick = mentionedMember.user.username
-    const unsusEmbed = new discord.messageEmbed()
+    const unsusEmbed = new discord.MessageEmbed()
       .setTitle(`${mentionedMember} ya no es mas SUS`)
       .setColor('RANDOM');
-    const unsusEmbed1 = new discord.messageEmbed()
+    const unsusEmbed1 = new discord.MessageEmbed()
       .setTitle(`Ya no sos SUS en ${message.guild.name}!`)
       .setColor('RANDOM');
     

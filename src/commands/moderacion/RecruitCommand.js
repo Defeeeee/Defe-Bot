@@ -14,7 +14,9 @@ module.exports = class RecruitCommand extends BaseCommand {
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const staffNick = ' | MOD'
     const modEmbed = new Discord.MessageEmbed()
-      .setTitle("Nuevo mod " + mentionedMember.user.username)
+      .setTitle("Nuevo mod " + mentionedMember.user.username);
+    const modEmbed1 = new Discord.MessageEmbed()
+      .setTitle(`Ahora sos mod en ${message.guild.name}`);
 
     if (!staffRole) return message.channel.send('No hay ningun rol de Mod');
     if (!args[0]) return message.channel.send("`e!recruit @miembro` o `e!recruit ID`");
@@ -23,5 +25,6 @@ module.exports = class RecruitCommand extends BaseCommand {
     await mentionedMember.roles.add(staffRole.id).catch(err => message.channel.send("No pude poner el rol de mod"));
     await mentionedMember.setNickname(mentionedMember.user.username + staffNick)
       message.channel.send(modEmbed)
+    await mentionedMember.send(modEmbed1).catch(err => console.log(err));
   }
 }

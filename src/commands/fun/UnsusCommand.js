@@ -16,7 +16,7 @@ module.exports = class UnsusCommand extends BaseCommand {
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const unsusNick = mentionedMember.user.username
     const unsusEmbed = new discord.MessageEmbed()
-      .setTitle(`${mentionedMember} ya no es mas SUS`)
+      .setTitle(`${mentionedMember.user.username} ya no es mas SUS`)
       .setColor('RANDOM');
     const unsusEmbed1 = new discord.MessageEmbed()
       .setTitle(`Ya no sos SUS en ${message.guild.name}!`)

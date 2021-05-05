@@ -1,0 +1,24 @@
+const { DiscordAPIError } = require('discord.js');
+const BaseCommand = require('../../utils/structures/BaseCommand');
+const Discord = require('discord.js')
+const fetch = require('node-fetch')
+
+module.exports = class MemeCommand extends BaseCommand {
+  constructor() {
+    super('meme', 'fun', []);
+  }
+
+  async run(client, message, args) {
+    fetch('https://meme-api.herokuapp.com/gimme')
+      .then(res => res.json())
+      .then(json => {
+        const memeEmbed = new Discord.MessageEmbed()
+          .setTitle(json.title)
+          .setImage(json.url)
+          .setFooter(`${json.subreddit} ${json.postlink}`);
+
+        let msg = await message.channel.send('Buscando un meme . . .');
+        msg.edit(memeEmbed);
+      });
+  }
+}

@@ -8,7 +8,7 @@ module.exports = class AvisosCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
-    if (!message.member.hasPermission(ADMINISTRATOR)) return message.channel.send('No podes usar esto master')
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('No podes usar esto master')
     const messageToSay = args.join(" ");
     const avisosEmbed = new Discord.MessageEmbed()
       .setTitle('Aviso')

@@ -11,7 +11,7 @@ module.exports = class TempmuteCommand extends BaseCommand {
     if (!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send('ðŸ›‘YOU DONT HAVE PERMISSION TO USE THIS COMMANDðŸ›‘');
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send('ðŸ›‘I DONT HAVE PERMISSION TO USE THIS COMMANDðŸ›‘');
 
-    const muteRole = message.guild.roles.cache.get('');
+    const muteRole = message.guild.roles.cache.get('750366174633656320');
     const memberRole = message.guild.roles.cache.get('733346115948380201');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     let time = args[1];
@@ -22,12 +22,13 @@ module.exports = class TempmuteCommand extends BaseCommand {
       .addField(`Duracion ${time}`, `Razon: ${reason}`)
       .setColor('RANDOM')
       .setTimestamp()
-      .setFooter(`Alberto Bot desarrollado por Federico Diaz Nemeth`);
+      .setFooter(`Defe Bot desarrollado por Federico Diaz Nemeth`);
       
     const tempmutefinishedEmbed = new discord.MessageEmbed()
       .setTitle(`Fuiste desmuteado en  ${message.guild.name}`)
+      .setFooter('Ort Bot, Developed by Bernardo Paley')
       .setColor('RANDOM')
-      .setFooter(`Alberto Bot desarrollado por Federico Diaz Nemeth`);
+      .setFooter(`Defe Bot desarrollado por Federico Diaz Nemeth`);
 
     if (!args[0]) return message.channel.send('Tenes que poner un miembro y una duracion');
     if (!mentionedMember) return message.channel.send('No encuentro el miembro');

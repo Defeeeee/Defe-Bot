@@ -15,7 +15,7 @@ module.exports = class ComandosCommand extends BaseCommand {
       .setTitle(`Comandos`)
       .addField(`Diversion`, '\u200b')
       .addField('Say: Basicamente sirve para que el bot diga cualquier cosa `e!say [lo que quieras]`', '\u200b')
-      .addField('Peruano: envia un ataque peruano al miembro mencionado, solo se puede usar por los miembros con rol "Peruano" `e!peruano @usuario`', '\u200b')
+      .addField('Horarios: Muestra los horarios de 1D `e!horarios`', '\u200b')
       .addField('Moderacion', '\u200b')
       .addField('Ban: Para banear miembros `e!ban @usuario {razon}`', '\u200b')
       .addField('Kick: Para expulsar a miembros `e!kick @usuario {razon}`', '\u200b')

@@ -16,7 +16,7 @@ module.exports = class WarnCommand extends BaseCommand {
     const warnrole2 = message.guild.roles.cache.find(role => role.name == 'Warnings : [2]');
     const warnrole3 = message.guild.roles.cache.find(role => role.name == 'Warnings : [3]');
     const muteRole = message.guild.roles.cache.get('750366174633656320');
-    const memberRole = message.guild.roles.cache.get('8733346115948380201')
+    const memberRole = message.guild.roles.cache.get('840286259129221150')
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     let punishment = 1;
     let reason = args.slice(2).join(" ");

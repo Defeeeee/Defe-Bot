@@ -11,7 +11,7 @@ module.exports = class TempmodCommand extends BaseCommand {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No tenes permiso para usar este comando.");
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send('No tengo los permisos necesarios');
 
-    const staffRole = message.guild.roles.cache.get('733344436611973220');
+    const staffRole = message.guild.roles.cache.get('843609484550078486');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     const staffNick = ' | TempMod'
     let time = args[1];
@@ -21,12 +21,12 @@ module.exports = class TempmodCommand extends BaseCommand {
       .setTitle(`Tenes moderador temporal en ${message.guild.name}.`)
       .addField(`Duracion: ${time}`)
       .setColor(`RANDOM`)
-      .setFooter('Defe Bot desarrollado por Federico Diaz Nemeth');
+      .setFooter('Alberto Bot desarrollado por Federico Diaz Nemeth');
     const tempmodEmbed3 = new Discord.MessageEmbed()
       .setTitle(`Tu moderador temporal en ${message.guild.name} ha finalizado.`)
       .setColor(`RANDOM`)
       .setTimestamp()
-      .setFooter('Defe Bot desarrollado por Federico Diaz Nemeth');
+      .setFooter('Alberto Bot desarrollado por Federico Diaz Nemeth');
 
     if (!staffRole) return message.channel.send('No hay ningun rol de Mod');
     if (!args[0]) return message.channel.send("`e!recruit @miembro` o `e!recruit ID`");

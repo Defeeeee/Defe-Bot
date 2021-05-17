@@ -5,7 +5,7 @@ const ReactionPages = recon.ReactionPages;
 
 module.exports = class HorariosCommand extends BaseCommand {
   constructor() {
-    super('horarios', 'fun', []);
+    super('horarios', 'dun', []);
   }
 
   //.addField('\u200b', '\u200b')

@@ -12,9 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.3",
+    "discord.js": "^12.5.1",
     "express": "^4.17.1",
-    "ms": "^2.1.3",
     "node-fetch": "^2.6.1",
     "reconlx": "^1.2.41"
   },
